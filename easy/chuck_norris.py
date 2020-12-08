@@ -4,8 +4,7 @@ def make_bit_seq(s: str) -> str:
     return "".join(f"{ord(i):07b}" for i in s)
 
 
-def norris_binary():
-    message = input()
+def norris_binary(message):
     answer = ""
     chars = [m for m in make_bit_seq(message)]
     i = 0
@@ -22,7 +21,9 @@ def norris_binary():
         nb = "0" if chars[i] == "1" else "00"
         answer += f"{nb} 0"
     print(answer.strip())
+    return answer.strip()
 
 
 if __name__ == '__main__':
-    norris_binary()
+    message = input()
+    norris_binary(message)
